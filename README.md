@@ -168,15 +168,38 @@ Documentation Swagger disponible sur : `http://localhost:5002/api-docs`
 
 ## 🚀 Déploiement
 
-### Backend (Recommandations)
-- **Railway** / **Render** / **Heroku**
-- Configurer les variables d'environnement
-- Utiliser MongoDB Atlas pour la base de données
+**📘 [Guide de déploiement complet → DEPLOYMENT.md](DEPLOYMENT.md)**
 
-### Frontend (Recommandations)
-- **Vercel** / **Netlify** / **GitHub Pages**
-- Mettre à jour l'URL de l'API dans `frontend/src/api/api.js`
-- Build avec `npm run build`
+### Quick Start Production
+
+#### Backend sur Render
+1. Créer un compte sur [Render.com](https://render.com)
+2. Nouveau Web Service depuis le repo GitHub
+3. Configurer les variables d'environnement (MONGO_URI, JWT_SECRET, CORS_ORIGIN)
+4. Déployer automatiquement
+
+#### Frontend sur Vercel
+```bash
+# Installer Vercel CLI
+npm i -g vercel
+
+# Déployer
+cd frontend
+vercel --prod
+```
+
+**Variables d'environnement Vercel :**
+- `VITE_API_URL` : URL de votre backend (ex: `https://mytasks-api.onrender.com/api`)
+
+### Services Recommandés
+- **Frontend** : Vercel (gratuit, CDN global, déploiement instantané)
+- **Backend** : Render ou Railway (gratuit avec limitations)
+- **Base de données** : MongoDB Atlas (gratuit jusqu'à 512MB)
+
+### URLs de démo
+- Frontend : `https://votre-app.vercel.app`
+- Backend API : `https://votre-api.onrender.com`
+- Documentation API : `https://votre-api.onrender.com/api-docs`
 
 ## 📦 Scripts Disponibles
 
