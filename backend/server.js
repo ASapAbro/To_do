@@ -31,5 +31,11 @@ app.use('/api/tasks', taskRoutes);
 // Route Swagger
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
-const PORT = process.env.PORT || 5002;
-app.listen(PORT, () => console.log(`🚀 Server started on port ${PORT}`));
+// Export pour Vercel serverless
+module.exports = app;
+
+// Démarrer le serveur localement seulement
+if (require.main === module) {
+  const PORT = process.env.PORT || 5002;
+  app.listen(PORT, () => console.log(`🚀 Server started on port ${PORT}`));
+}
