@@ -31,7 +31,7 @@ export default function Register() {
       const res = await api.post("/auth/register", { name, email, password });
       localStorage.setItem("token", res.data.token);
       showToast("Inscription réussie !", "success");
-      setTimeout(() => navigate("/tasks"), 500);
+      setTimeout(() => window.location.href = "/tasks", 500);
     } catch (err) {
       showToast(err.response?.data?.msg || "Erreur d'inscription", "error");
     } finally {

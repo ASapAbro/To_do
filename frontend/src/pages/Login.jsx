@@ -25,7 +25,7 @@ export default function Login() {
       const res = await api.post("/auth/login", { email, password });
       localStorage.setItem("token", res.data.token);
       showToast("Connexion réussie !", "success");
-      setTimeout(() => navigate("/tasks"), 500);
+      setTimeout(() => window.location.href = "/tasks", 500);
     } catch (err) {
       showToast(err.response?.data?.msg || "Erreur de connexion", "error");
     } finally {
